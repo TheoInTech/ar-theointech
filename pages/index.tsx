@@ -1,17 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { Afacad_Flux, Funnel_Sans } from "next/font/google";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useRef } from "react";
-import { motion, useScroll } from "framer-motion";
-import {
-  LinkedinLogo,
-  XLogo,
-  YoutubeLogo,
-  TiktokLogo,
-} from "@phosphor-icons/react";
 import { HeroSection } from "@/sections/hero";
 
 const afacadFlux = Afacad_Flux({
@@ -28,10 +20,6 @@ const funnelSans = Funnel_Sans({
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
 
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
@@ -59,10 +47,10 @@ export default function Home() {
               background: `
             radial-gradient(600px at ${cursorPosition.x}px ${
                 cursorPosition.y
-              }px, rgba(139, 92, 246, 0.15), transparent 80%),
+              }px, rgba(139, 92, 246, 0.25), transparent 80%),
             radial-gradient(800px at ${cursorPosition.x - 200}px ${
                 cursorPosition.y + 200
-              }px, rgba(236, 72, 153, 0.1), transparent 80%)
+              }px, rgba(236, 72, 153, 0.2), transparent 80%)
           `,
             }}
           />
